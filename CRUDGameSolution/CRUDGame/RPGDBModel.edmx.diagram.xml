@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="e5ad81888dd940f49d891b232ec53222" Name="Diagram1">
+        <EntityTypeShape EntityType="RPGDBModel.Aparencia" Width="1.5" PointX="3" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="RPGDBModel.Atributo" Width="1.5" PointX="3" PointY="6.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="RPGDBModel.Classe" Width="1.5" PointX="0.75" PointY="14.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="RPGDBModel.Cor" Width="1.5" PointX="0.75" PointY="2" IsExpanded="true" />
+        <EntityTypeShape EntityType="RPGDBModel.Habilidade" Width="1.5" PointX="3" PointY="9.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="RPGDBModel.Personagem" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="RPGDBModel.Raca" Width="1.5" PointX="3" PointY="11.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="RPGDBModel.Subclasse" Width="1.5" PointX="3" PointY="14.25" IsExpanded="true" />
+        <AssociationConnector Association="RPGDBModel.FK_Aparencia_CorCabelo" ManuallyRouted="false" />
+        <AssociationConnector Association="RPGDBModel.FK_Aparencia_CorOlho" ManuallyRouted="false" />
+        <AssociationConnector Association="RPGDBModel.FK_Aparencia_CorPele" ManuallyRouted="false" />
+        <AssociationConnector Association="RPGDBModel.FK_Persongem_Aparencia" ManuallyRouted="false" />
+        <AssociationConnector Association="RPGDBModel.FK_Persongem_Atributo" ManuallyRouted="false" />
+        <AssociationConnector Association="RPGDBModel.FK_Subclasse_Classe" ManuallyRouted="false" />
+        <AssociationConnector Association="RPGDBModel.FK_Persongem_Habilidade" ManuallyRouted="false" />
+        <AssociationConnector Association="RPGDBModel.FK_Persongem_Raca" ManuallyRouted="false" />
+        <AssociationConnector Association="RPGDBModel.FK_Persongem_Subclasse" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="RPGDBModel.LogAcesso" Width="1.5" PointX="7.625" PointY="6.125" />
+        <EntityTypeShape EntityType="RPGDBModel.Usuario" Width="1.5" PointX="5.375" PointY="5.875" />
+        <AssociationConnector Association="RPGDBModel.FK_LogAcesso_Usuario" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

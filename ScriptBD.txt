@@ -1,0 +1,225 @@
+-- Usuário
+CREATE TABLE [dbo].[Usuario] (
+    [IdUsuario] INT           IDENTITY (1, 1) NOT NULL,
+    [Nome]      VARCHAR (255) NOT NULL,
+    [Login]     VARCHAR (255) NOT NULL,
+    [Senha]     VARCHAR (512) NOT NULL,
+    [DataNasc]  DATE          NOT NULL,
+    PRIMARY KEY CLUSTERED ([IdUsuario] ASC)
+);
+
+-- LogAcesso
+CREATE TABLE [dbo].[LogAcesso] (
+    [IdLogAcesso]    INT      IDENTITY (1, 1) NOT NULL,
+    [UsuarioId]      INT      NOT NULL,
+    [DataHoraAcesso] DATETIME NOT NULL,
+    PRIMARY KEY CLUSTERED ([IdLogAcesso] ASC),
+    CONSTRAINT [FK_LogAcesso_Usuario] FOREIGN KEY ([UsuarioId]) REFERENCES [dbo].[Usuario] ([IdUsuario])
+);
+
+SET IDENTITY_INSERT [dbo].[LogAcesso] ON
+INSERT INTO [dbo].[LogAcesso] ([IdLogAcesso], [UsuarioId], [DataHoraAcesso]) VALUES (1, 1, N'2023-11-25 23:56:04')
+INSERT INTO [dbo].[LogAcesso] ([IdLogAcesso], [UsuarioId], [DataHoraAcesso]) VALUES (2, 1, N'2023-11-26 01:51:04')
+INSERT INTO [dbo].[LogAcesso] ([IdLogAcesso], [UsuarioId], [DataHoraAcesso]) VALUES (3, 1, N'2023-11-26 02:05:45')
+INSERT INTO [dbo].[LogAcesso] ([IdLogAcesso], [UsuarioId], [DataHoraAcesso]) VALUES (4, 1, N'2023-11-26 02:06:51')
+INSERT INTO [dbo].[LogAcesso] ([IdLogAcesso], [UsuarioId], [DataHoraAcesso]) VALUES (5, 1, N'2023-11-26 02:09:20')
+INSERT INTO [dbo].[LogAcesso] ([IdLogAcesso], [UsuarioId], [DataHoraAcesso]) VALUES (6, 1, N'2023-11-26 02:11:11')
+INSERT INTO [dbo].[LogAcesso] ([IdLogAcesso], [UsuarioId], [DataHoraAcesso]) VALUES (7, 1, N'2023-11-26 02:12:15')
+INSERT INTO [dbo].[LogAcesso] ([IdLogAcesso], [UsuarioId], [DataHoraAcesso]) VALUES (8, 1, N'2023-11-26 02:13:22')
+INSERT INTO [dbo].[LogAcesso] ([IdLogAcesso], [UsuarioId], [DataHoraAcesso]) VALUES (9, 1, N'2023-11-26 02:13:54')
+INSERT INTO [dbo].[LogAcesso] ([IdLogAcesso], [UsuarioId], [DataHoraAcesso]) VALUES (10, 6, N'2023-11-26 02:25:20')
+INSERT INTO [dbo].[LogAcesso] ([IdLogAcesso], [UsuarioId], [DataHoraAcesso]) VALUES (11, 1, N'2023-11-26 02:25:59')
+INSERT INTO [dbo].[LogAcesso] ([IdLogAcesso], [UsuarioId], [DataHoraAcesso]) VALUES (12, 1, N'2023-12-05 18:44:13')
+INSERT INTO [dbo].[LogAcesso] ([IdLogAcesso], [UsuarioId], [DataHoraAcesso]) VALUES (13, 1, N'2023-12-08 00:10:34')
+INSERT INTO [dbo].[LogAcesso] ([IdLogAcesso], [UsuarioId], [DataHoraAcesso]) VALUES (14, 1, N'2023-12-08 00:13:07')
+INSERT INTO [dbo].[LogAcesso] ([IdLogAcesso], [UsuarioId], [DataHoraAcesso]) VALUES (15, 1, N'2023-12-08 00:26:59')
+INSERT INTO [dbo].[LogAcesso] ([IdLogAcesso], [UsuarioId], [DataHoraAcesso]) VALUES (16, 7, N'2023-12-08 01:07:19')
+SET IDENTITY_INSERT [dbo].[LogAcesso] OFF
+
+SET IDENTITY_INSERT [dbo].[Usuario] ON
+INSERT INTO [dbo].[Usuario] ([IdUsuario], [Nome], [Login], [Senha], [DataNasc]) VALUES (1, N'Arthur', N'saluci', N'F7C3BC1D808E04732ADF679965CCC34CA7AE3441', N'2004-05-20')
+INSERT INTO [dbo].[Usuario] ([IdUsuario], [Nome], [Login], [Senha], [DataNasc]) VALUES (6, N'Saluci', N'nazareth', N'3C5EA4769C6160DFCA95AF6C4DDD1C5714360137', N'1111-11-11')
+INSERT INTO [dbo].[Usuario] ([IdUsuario], [Nome], [Login], [Senha], [DataNasc]) VALUES (7, N'Arthur', N'maia', N'F7C3BC1D808E04732ADF679965CCC34CA7AE3441', N'2003-09-29')
+INSERT INTO [dbo].[Usuario] ([IdUsuario], [Nome], [Login], [Senha], [DataNasc]) VALUES (8, N'Thiago', N'diorio', N'F7C3BC1D808E04732ADF679965CCC34CA7AE3441', N'1999-11-17')
+SET IDENTITY_INSERT [dbo].[Usuario] OFF
+
+-- Classe
+CREATE TABLE [dbo].[Classe] (
+    [IdClasse]  INT           IDENTITY (1, 1) NOT NULL,
+    [Descricao] VARCHAR (100) NOT NULL,
+    PRIMARY KEY CLUSTERED ([IdClasse] ASC)
+);
+
+SET IDENTITY_INSERT [dbo].[Classe] ON
+INSERT INTO [dbo].[Classe] ([IdClasse], [Descricao]) VALUES (13, N'Guerreiro')
+INSERT INTO [dbo].[Classe] ([IdClasse], [Descricao]) VALUES (14, N'Mago')
+INSERT INTO [dbo].[Classe] ([IdClasse], [Descricao]) VALUES (15, N'Ladrão')
+INSERT INTO [dbo].[Classe] ([IdClasse], [Descricao]) VALUES (16, N'Clérigo')
+INSERT INTO [dbo].[Classe] ([IdClasse], [Descricao]) VALUES (17, N'Arqueiro')
+INSERT INTO [dbo].[Classe] ([IdClasse], [Descricao]) VALUES (18, N'Paladino')
+INSERT INTO [dbo].[Classe] ([IdClasse], [Descricao]) VALUES (19, N'Feiticeiro')
+INSERT INTO [dbo].[Classe] ([IdClasse], [Descricao]) VALUES (20, N'Bárbaro')
+INSERT INTO [dbo].[Classe] ([IdClasse], [Descricao]) VALUES (21, N'Druida')
+INSERT INTO [dbo].[Classe] ([IdClasse], [Descricao]) VALUES (22, N'Místico')
+SET IDENTITY_INSERT [dbo].[Classe] OFF
+
+-- Subclasse
+CREATE TABLE [dbo].[Subclasse] (
+    [IdSubclasse] INT          IDENTITY (1, 1) NOT NULL,
+    [Descricao]   VARCHAR (50) NOT NULL,
+    [ClasseID]    INT          NOT NULL,
+    PRIMARY KEY CLUSTERED ([IdSubclasse] ASC),
+    UNIQUE NONCLUSTERED ([Descricao] ASC),
+    CONSTRAINT [FK_Subclasse_Classe] FOREIGN KEY ([ClasseID]) REFERENCES [dbo].[Classe] ([IdClasse])
+);
+
+SET IDENTITY_INSERT [dbo].[Subclasse] ON
+INSERT INTO [dbo].[Subclasse] ([IdSubclasse], [Descricao], [ClasseID]) VALUES (21, N'Cavaleiro', 13)
+INSERT INTO [dbo].[Subclasse] ([IdSubclasse], [Descricao], [ClasseID]) VALUES (22, N'Invocador', 14)
+INSERT INTO [dbo].[Subclasse] ([IdSubclasse], [Descricao], [ClasseID]) VALUES (23, N'Assassino', 15)
+INSERT INTO [dbo].[Subclasse] ([IdSubclasse], [Descricao], [ClasseID]) VALUES (24, N'Clérigo da Luz', 16)
+INSERT INTO [dbo].[Subclasse] ([IdSubclasse], [Descricao], [ClasseID]) VALUES (25, N'Arqueiro Sombrio', 17)
+INSERT INTO [dbo].[Subclasse] ([IdSubclasse], [Descricao], [ClasseID]) VALUES (26, N'Paladino da Devoção', 18)
+INSERT INTO [dbo].[Subclasse] ([IdSubclasse], [Descricao], [ClasseID]) VALUES (27, N'Feiticeiro Elemental', 19)
+INSERT INTO [dbo].[Subclasse] ([IdSubclasse], [Descricao], [ClasseID]) VALUES (28, N'Bárbaro Totêmico', 20)
+INSERT INTO [dbo].[Subclasse] ([IdSubclasse], [Descricao], [ClasseID]) VALUES (29, N'Druida da Lua', 21)
+INSERT INTO [dbo].[Subclasse] ([IdSubclasse], [Descricao], [ClasseID]) VALUES (30, N'Mentalista', 22)
+SET IDENTITY_INSERT [dbo].[Subclasse] OFF
+
+-- Raça
+CREATE TABLE [dbo].[Raca] (
+    [IdRaca]    INT          IDENTITY (1, 1) NOT NULL,
+    [Descricao] VARCHAR (50) NOT NULL,
+    PRIMARY KEY CLUSTERED ([IdRaca] ASC)
+);
+
+SET IDENTITY_INSERT [dbo].[Raca] ON
+INSERT INTO [dbo].[Raca] ([IdRaca], [Descricao]) VALUES (8, N'Humano')
+INSERT INTO [dbo].[Raca] ([IdRaca], [Descricao]) VALUES (9, N'Elfos')
+INSERT INTO [dbo].[Raca] ([IdRaca], [Descricao]) VALUES (10, N'Anões')
+INSERT INTO [dbo].[Raca] ([IdRaca], [Descricao]) VALUES (11, N'Orcs')
+INSERT INTO [dbo].[Raca] ([IdRaca], [Descricao]) VALUES (12, N'Gnomos')
+INSERT INTO [dbo].[Raca] ([IdRaca], [Descricao]) VALUES (13, N'Halflings')
+INSERT INTO [dbo].[Raca] ([IdRaca], [Descricao]) VALUES (14, N'Meio-elfos')
+INSERT INTO [dbo].[Raca] ([IdRaca], [Descricao]) VALUES (15, N'Meio-orcs')
+INSERT INTO [dbo].[Raca] ([IdRaca], [Descricao]) VALUES (16, N'Goblins')
+INSERT INTO [dbo].[Raca] ([IdRaca], [Descricao]) VALUES (17, N'Dragões')
+SET IDENTITY_INSERT [dbo].[Raca] OFF
+
+-- Habilidade
+CREATE TABLE [dbo].[Habilidade] (
+    [IdHabilidade] INT          IDENTITY (1, 1) NOT NULL,
+    [Descricao]    VARCHAR (50) NOT NULL,
+    PRIMARY KEY CLUSTERED ([IdHabilidade] ASC),
+    UNIQUE NONCLUSTERED ([Descricao] ASC)
+);
+
+SET IDENTITY_INSERT [dbo].[Habilidade] ON
+INSERT INTO [dbo].[Habilidade] ([IdHabilidade], [Descricao]) VALUES (20, N'Bola de Fogo')
+INSERT INTO [dbo].[Habilidade] ([IdHabilidade], [Descricao]) VALUES (23, N'Camuflagem')
+INSERT INTO [dbo].[Habilidade] ([IdHabilidade], [Descricao]) VALUES (27, N'Criação de Ilusões')
+INSERT INTO [dbo].[Habilidade] ([IdHabilidade], [Descricao]) VALUES (22, N'Cura Rápida')
+INSERT INTO [dbo].[Habilidade] ([IdHabilidade], [Descricao]) VALUES (34, N'Eletrocinese')
+INSERT INTO [dbo].[Habilidade] ([IdHabilidade], [Descricao]) VALUES (25, N'Invocação de Elementais')
+INSERT INTO [dbo].[Habilidade] ([IdHabilidade], [Descricao]) VALUES (29, N'Linguagem Animal')
+INSERT INTO [dbo].[Habilidade] ([IdHabilidade], [Descricao]) VALUES (28, N'Mestre das Armas')
+INSERT INTO [dbo].[Habilidade] ([IdHabilidade], [Descricao]) VALUES (24, N'Persuasão Encantadora')
+INSERT INTO [dbo].[Habilidade] ([IdHabilidade], [Descricao]) VALUES (19, N'Rajada de Flechas')
+INSERT INTO [dbo].[Habilidade] ([IdHabilidade], [Descricao]) VALUES (33, N'Regeneração')
+INSERT INTO [dbo].[Habilidade] ([IdHabilidade], [Descricao]) VALUES (31, N'Roubo de Energia')
+INSERT INTO [dbo].[Habilidade] ([IdHabilidade], [Descricao]) VALUES (21, N'Teleporte')
+INSERT INTO [dbo].[Habilidade] ([IdHabilidade], [Descricao]) VALUES (30, N'Transmutação')
+INSERT INTO [dbo].[Habilidade] ([IdHabilidade], [Descricao]) VALUES (26, N'Visão Noturna')
+INSERT INTO [dbo].[Habilidade] ([IdHabilidade], [Descricao]) VALUES (32, N'Voo')
+SET IDENTITY_INSERT [dbo].[Habilidade] OFF
+
+-- Atributos
+CREATE TABLE [dbo].[Atributo] (
+    [IdAtributo]   INT           IDENTITY (1, 1) NOT NULL,
+    [Nome]         VARCHAR (255) NOT NULL,
+    [Forca]        INT           NOT NULL,
+    [Destreza]     INT           NOT NULL,
+    [Sabedoria]    INT           NOT NULL,
+    [Constituicao] INT           NOT NULL,
+    [Inteligencia] INT           NOT NULL,
+    [Carisma]      INT           NOT NULL,
+    PRIMARY KEY CLUSTERED ([IdAtributo] ASC)
+);
+
+SET IDENTITY_INSERT [dbo].[Atributo] ON
+INSERT INTO [dbo].[Atributo] ([IdAtributo], [Nome], [Forca], [Destreza], [Sabedoria], [Constituicao], [Inteligencia], [Carisma]) VALUES (2, N'Estrela', 52, 25, 75, 25, 82, 99)
+INSERT INTO [dbo].[Atributo] ([IdAtributo], [Nome], [Forca], [Destreza], [Sabedoria], [Constituicao], [Inteligencia], [Carisma]) VALUES (3, N'Sombrio', 99, 70, 88, 71, 60, 12)
+INSERT INTO [dbo].[Atributo] ([IdAtributo], [Nome], [Forca], [Destreza], [Sabedoria], [Constituicao], [Inteligencia], [Carisma]) VALUES (4, N'Vazio', 99, 99, 90, 80, 91, 10)
+INSERT INTO [dbo].[Atributo] ([IdAtributo], [Nome], [Forca], [Destreza], [Sabedoria], [Constituicao], [Inteligencia], [Carisma]) VALUES (5, N'Popstar', 52, 66, 55, 78, 45, 99)
+SET IDENTITY_INSERT [dbo].[Atributo] OFF
+
+-- Cor
+CREATE TABLE [dbo].[Cor] (
+    [IdCor]     INT           IDENTITY (1, 1) NOT NULL,
+    [Descricao] VARCHAR (150) NOT NULL,
+    PRIMARY KEY CLUSTERED ([IdCor] ASC)
+);
+
+SET IDENTITY_INSERT [dbo].[Cor] ON
+INSERT INTO [dbo].[Cor] ([IdCor], [Descricao]) VALUES (5, N'Roxo')
+INSERT INTO [dbo].[Cor] ([IdCor], [Descricao]) VALUES (6, N'Azul')
+INSERT INTO [dbo].[Cor] ([IdCor], [Descricao]) VALUES (7, N'Vermelho')
+INSERT INTO [dbo].[Cor] ([IdCor], [Descricao]) VALUES (8, N'Preto')
+INSERT INTO [dbo].[Cor] ([IdCor], [Descricao]) VALUES (9, N'Branco')
+INSERT INTO [dbo].[Cor] ([IdCor], [Descricao]) VALUES (10, N'Verde')
+INSERT INTO [dbo].[Cor] ([IdCor], [Descricao]) VALUES (11, N'Amarelo')
+INSERT INTO [dbo].[Cor] ([IdCor], [Descricao]) VALUES (12, N'Marrom')
+INSERT INTO [dbo].[Cor] ([IdCor], [Descricao]) VALUES (13, N'Rosa')
+SET IDENTITY_INSERT [dbo].[Cor] OFF
+
+-- Aparencia
+CREATE TABLE [dbo].[Aparencia] (
+    [IdAparencia]  INT             IDENTITY (1, 1) NOT NULL,
+    [Nome]         VARCHAR (255)   NOT NULL,
+    [Peso]         DECIMAL (10, 2) NOT NULL,
+    [Altura]       DECIMAL (10, 2) NOT NULL,
+    [EstiloCabelo] VARCHAR (50)    NOT NULL,
+    [CorOlho]      INT             NOT NULL,
+    [CorCabelo]    INT             NOT NULL,
+    [CorPele]      INT             NOT NULL,
+    PRIMARY KEY CLUSTERED ([IdAparencia] ASC),
+    CONSTRAINT [FK_Aparencia_CorCabelo] FOREIGN KEY ([CorCabelo]) REFERENCES [dbo].[Cor] ([IdCor]),
+    CONSTRAINT [FK_Aparencia_CorOlho] FOREIGN KEY ([CorOlho]) REFERENCES [dbo].[Cor] ([IdCor]),
+    CONSTRAINT [FK_Aparencia_CorPele] FOREIGN KEY ([CorPele]) REFERENCES [dbo].[Cor] ([IdCor])
+);
+
+SET IDENTITY_INSERT [dbo].[Aparencia] ON
+INSERT INTO [dbo].[Aparencia] ([IdAparencia], [Nome], [Peso], [Altura], [EstiloCabelo], [CorOlho], [CorCabelo], [CorPele]) VALUES (7, N'Aparência da Noite', CAST(65.00 AS Decimal(10, 2)), CAST(1.67 AS Decimal(10, 2)), N'Ondulado', 7, 8, 9)
+INSERT INTO [dbo].[Aparencia] ([IdAparencia], [Nome], [Peso], [Altura], [EstiloCabelo], [CorOlho], [CorCabelo], [CorPele]) VALUES (8, N'Luz do Crepúsculo', CAST(80.00 AS Decimal(10, 2)), CAST(1.85 AS Decimal(10, 2)), N'Liso', 8, 5, 11)
+INSERT INTO [dbo].[Aparencia] ([IdAparencia], [Nome], [Peso], [Altura], [EstiloCabelo], [CorOlho], [CorCabelo], [CorPele]) VALUES (9, N'Chama Ardente', CAST(75.00 AS Decimal(10, 2)), CAST(1.75 AS Decimal(10, 2)), N'Cacheado', 8, 7, 11)
+INSERT INTO [dbo].[Aparencia] ([IdAparencia], [Nome], [Peso], [Altura], [EstiloCabelo], [CorOlho], [CorCabelo], [CorPele]) VALUES (10, N'Bruma da Manhã', CAST(68.00 AS Decimal(10, 2)), CAST(1.77 AS Decimal(10, 2)), N'Crespo', 9, 13, 5)
+INSERT INTO [dbo].[Aparencia] ([IdAparencia], [Nome], [Peso], [Altura], [EstiloCabelo], [CorOlho], [CorCabelo], [CorPele]) VALUES (11, N'Sombra Sutil', CAST(57.00 AS Decimal(10, 2)), CAST(1.58 AS Decimal(10, 2)), N'Liso', 9, 8, 10)
+INSERT INTO [dbo].[Aparencia] ([IdAparencia], [Nome], [Peso], [Altura], [EstiloCabelo], [CorOlho], [CorCabelo], [CorPele]) VALUES (12, N'Esplendor Solar', CAST(90.00 AS Decimal(10, 2)), CAST(1.95 AS Decimal(10, 2)), N'Liso', 10, 11, 9)
+SET IDENTITY_INSERT [dbo].[Aparencia] OFF
+
+-- Personagem
+CREATE TABLE [dbo].[Personagem] (
+    [IdPersonagem] INT           IDENTITY (1, 1) NOT NULL,
+    [Nome]         VARCHAR (255) NOT NULL,
+    [DataNasc]     DATE          NOT NULL,
+    [Nivel]        INT           NOT NULL,
+    [Sexo]         VARCHAR (50)  NOT NULL,
+    [RacaID]       INT           NOT NULL,
+    [SubclasseID]  INT           NOT NULL,
+    [AparenciaID]  INT           NOT NULL,
+    [AtributoID]   INT           NOT NULL,
+    [HabilidadeID] INT           NOT NULL,
+    PRIMARY KEY CLUSTERED ([IdPersonagem] ASC),
+    CONSTRAINT [FK_Persongem_Raca] FOREIGN KEY ([RacaID]) REFERENCES [dbo].[Raca] ([IdRaca]),
+    CONSTRAINT [FK_Persongem_Subclasse] FOREIGN KEY ([SubclasseID]) REFERENCES [dbo].[Subclasse] ([IdSubclasse]),
+    CONSTRAINT [FK_Persongem_Habilidade] FOREIGN KEY ([HabilidadeID]) REFERENCES [dbo].[Habilidade] ([IdHabilidade]),
+    CONSTRAINT [FK_Persongem_Aparencia] FOREIGN KEY ([AparenciaID]) REFERENCES [dbo].[Aparencia] ([IdAparencia]),
+    CONSTRAINT [FK_Persongem_Atributo] FOREIGN KEY ([AtributoID]) REFERENCES [dbo].[Atributo] ([IdAtributo])
+);
+
+SET IDENTITY_INSERT [dbo].[Personagem] ON
+INSERT INTO [dbo].[Personagem] ([IdPersonagem], [Nome], [DataNasc], [Nivel], [Sexo], [RacaID], [SubclasseID], [AparenciaID], [AtributoID], [HabilidadeID]) VALUES (6, N'Minato', N'2000-02-15', 5, N'M', 8, 21, 7, 3, 21)
+INSERT INTO [dbo].[Personagem] ([IdPersonagem], [Nome], [DataNasc], [Nivel], [Sexo], [RacaID], [SubclasseID], [AparenciaID], [AtributoID], [HabilidadeID]) VALUES (7, N'Gabimaru', N'1999-10-15', 2, N'M', 9, 23, 11, 4, 20)
+INSERT INTO [dbo].[Personagem] ([IdPersonagem], [Nome], [DataNasc], [Nivel], [Sexo], [RacaID], [SubclasseID], [AparenciaID], [AtributoID], [HabilidadeID]) VALUES (8, N'Sakura', N'1994-04-24', 1, N'F', 11, 22, 10, 2, 22)
+INSERT INTO [dbo].[Personagem] ([IdPersonagem], [Nome], [DataNasc], [Nivel], [Sexo], [RacaID], [SubclasseID], [AparenciaID], [AtributoID], [HabilidadeID]) VALUES (9, N'Mutana', N'2001-05-04', 7, N'F', 10, 27, 12, 5, 29)
+SET IDENTITY_INSERT [dbo].[Personagem] OFF

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="2d10ec0714b3413abef59592caae0ba3" Name="Diagram1" ZoomLevel="80">
+        <EntityTypeShape EntityType="RPGDBModel.Classe" Width="1.5" PointX="4.875" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="RPGDBModel.Raca" Width="1.5" PointX="13.125" PointY="1.875" />
+        <EntityTypeShape EntityType="RPGDBModel.Habilidade" Width="1.5" PointX="10.125" PointY="0.5" />
+        <EntityTypeShape EntityType="RPGDBModel.Subclasse" Width="1.5" PointX="7.375" PointY="1.875" />
+        <AssociationConnector Association="RPGDBModel.FK_Subclasse_Classe" />
+        <EntityTypeShape EntityType="RPGDBModel.Aparencia" Width="1.5" PointX="13.125" PointY="3.75" />
+        <EntityTypeShape EntityType="RPGDBModel.Atributo" Width="1.5" PointX="7.375" PointY="4" />
+        <EntityTypeShape EntityType="RPGDBModel.Personagem" Width="1.5" PointX="10.125" PointY="2.625" />
+        <AssociationConnector Association="RPGDBModel.FK_Persongem_Aparencia" />
+        <AssociationConnector Association="RPGDBModel.FK_Persongem_Atributo" />
+        <AssociationConnector Association="RPGDBModel.FK_Persongem_Raca" />
+        <AssociationConnector Association="RPGDBModel.FK_Persongem_Subclasse" />
+        <AssociationConnector Association="RPGDBModel.Personagem_Habilidade" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
